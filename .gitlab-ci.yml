@@ -16,5 +16,5 @@ job1:
 job2:
   stage: deploy
   script:
-    -*default-template
+    - *default-template
     - echo "Hello from job 2"
