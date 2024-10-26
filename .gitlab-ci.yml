@@ -1,8 +1,20 @@
+stages:
+  - dev
+  - deploy
+
 .defaultscripts: &default-template
    - echo "hello default scripts"
 
 
 job1:
+  stage: dev
   script:
     - *default-template
     - echo "Hello from job1"
+
+
+job2:
+  stage: deploy
+  script:
+    -*default-template
+    - echo "Hello from job 2"
