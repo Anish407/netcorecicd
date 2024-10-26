@@ -1,6 +1,7 @@
 ## GitLab CICD
 
 - [Anchors](./Anchors/anchors.md)
+- [Before and After with anchors](./Anchors/before-after.yml)
 
 
 

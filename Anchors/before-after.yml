@@ -1,0 +1,25 @@
+﻿.some-script-before: &some-script-before
+  - echo "Execute this script first"
+
+.some-script: &some-script
+  - echo "Execute this script second"
+  - echo "Execute this script too"
+
+.some-script-after: &some-script-after
+  - echo "Execute this script last"
+
+job1:
+  before_script:
+    - *some-script-before
+  script:
+    - *some-script
+    - echo "Execute something, for this job only"
+  after_script:
+    - *some-script-after
+
+job2:
+  script:
+    - *some-script-before
+    - *some-script
+    - echo "Execute something else, for this job only"
+    - *some-script-after
